@@ -1,0 +1,294 @@
+
+/* 1. Global Styles */
+:root {
+    /* Primary Colors */
+    --color-primary: #1E63B5;
+    --color-primary-dark: #0D1B3D;
+    --color-primary-light: #2D8CDA;
+    --color-primary-glow: #3FA9F5;
+
+    /* Secondary Colors */
+    --color-secondary: #D95B12;
+    --color-secondary-bright: #FF7A1A;
+    --color-secondary-soft: #FFB347;
+
+    /* Neutral Colors */
+    --color-bg-dark: #0D1B3D;
+    --color-bg-light: #F4F6F9;
+    --color-text-dark: #222222;
+    --color-text-light: #FFFFFF;
+    --color-text-muted: #E6E6E6;
+
+    /* Effect & Accent Colors */
+    --color-glow-gold: #FFD84D;
+    --color-accent-cyan: #00E5FF;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #1E63B5, #2D8CDA);
+    --gradient-secondary: linear-gradient(135deg, #D95B12, #FF7A1A);
+    --gradient-hero: linear-gradient(135deg, #0D1B3D 0%, #1E63B5 60%, #D95B12 100%);
+
+    /* Button System */
+    --btn-primary-bg: var(--color-primary);
+    --btn-primary-hover: #174F90;
+    --btn-secondary-bg: var(--color-secondary);
+    --btn-secondary-hover: #B94C0F;
+
+    /* Borders & Shadows */
+    --border-light: #ffffff1a;
+    --shadow-soft: 0 4px 12px #00000026;
+    --shadow-glow-blue: 0 0 12px #2d8cda99;
+    --shadow-glow-orange: 0 0 12px #d95b1299;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text-dark);
+}
+
+/* 2. Typography Styles */
+h1, h2 {
+    color: var(--color-primary);
+    text-shadow: var(--shadow-soft);
+}
+
+h3 {
+    color: var(--color-secondary);
+    text-shadow: var(--shadow-soft);
+}
+/* 3. Layout Styles */
+/* 4. Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+    background: var(--color-bg-dark);
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Logo Styles */
+.logo img {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+}
+
+/* Navigation Styles */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-weight: 500;
+    font-size: 24px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--color-primary-glow);
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gradient-secondary);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* Authentication Styles */
+.auth {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.login {
+    text-decoration: none;
+    color: var(--color-secondary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login:hover {
+    color: var(--color-secondary-bright);
+}
+
+.signup {
+    text-decoration: none;
+    background: var(--color-secondary);
+    color: var(--color-text-light);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.signup:hover {
+    background: var(--btn-secondary-hover);
+    transform: translateY(-2px);
+}
+
+/* 5. Footer Styles */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+    text-align: center;
+}
+
+footer h4 {
+    color: var(--color-primary-light);
+}
+
+footer p {
+    color: var(--color-text-muted);
+}
+
+footer a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--color-secondary-bright);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 32px;
+    padding: 48px 24px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-social {
+    display: inline;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.social-link {
+    display: inline-block;
+    margin: 10px;
+    transition: 0.3s;
+    color: var(--color-secondary);
+}
+
+.social-link:hover {
+    color: var(--color-secondary-bright);
+    transform: translateY(-2px);
+}
+
+.footer-contact {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* 6. Main Content Styles */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+    background: var(--color-bg-light);
+}
+
+/* Home Page */
+#intro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px 24px;
+}
+
+#features {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    gap: 32px;
+    padding: 48px 24px;
+}
+
+.feature {
+    flex: 1;
+    background: var(--color-bg-light);
+    padding: 33px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-soft);
+}
+
+.feature h2 {
+    color: var(--color-secondary);
+    margin-bottom: 16px;
+}
+
+.feature p {
+    color: var(--color-text-dark);
+    font-size: 18px;
+}
+
+.feature li {
+    color: var(--color-text-dark);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* About Page */
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;text-align: center;
+    gap: 32px;
+    padding: 48px 24px;
+}
+
+
