@@ -2,8 +2,12 @@
 
 */
 
+import router from './router.js';
+//import header from './header.js';
 import homepage from './home.js';
 import aboutPage from './about.js';
+import contactPage from './contact.js';
+import loginPage from './login.js';
 
 const webapp = document.querySelector('body');
 
@@ -14,7 +18,7 @@ function header() {
     logo.classList.add('logo');
 
     const logoLink = document.createElement('a');
-    logoLink.href = '/';
+    logoLink.href = '#/';
     logo.appendChild(logoLink);
     
     const logoImg = document.createElement('img');
@@ -26,8 +30,8 @@ function header() {
     nav.classList.add('nav');
 
     const navLinks = [
-        { name: 'About', href: '/about', pathname: '/about' },
-        { name: 'Contact', href: '/contact', pathname: '/contact' }
+        { name: 'About', href: '#/about', pathname: '/about' },
+        { name: 'Contact', href: '#/contact', pathname: '/contact' }
     ];
 
     navLinks.forEach(link => {
@@ -42,8 +46,8 @@ function header() {
     authLinks.classList.add('auth');
 
     const loginLink = [
-        { name: 'Login', href: '/login', class: 'login' },
-        { name: 'Sign Up', href: '/signup', class: 'signup' }
+        { name: 'Login', href: '#/login', class: 'login', pathname: '/login' },
+        { name: 'Sign Up', href: '#/signup', class: 'signup', pathname: '/signup' }
     ];
     
     loginLink.forEach(link => {
@@ -51,6 +55,7 @@ function header() {
         authLink.href = link.href;
         authLink.textContent = link.name;
         authLink.classList.add(link.class);
+        authLink.pathname = link.pathname;
         authLinks.appendChild(authLink);
     });
 
@@ -78,8 +83,8 @@ function footer() {
     const emailParagraph = document.createElement('p');
     const emailText = document.createTextNode('Email: ');
     const emailLink = document.createElement('a');
-    emailLink.href = 'mailto:educatione-online@info.nl';
-    emailLink.textContent = 'educatione-online@info.nl';
+    emailLink.href = 'mailto:info@educatione.nl';
+    emailLink.textContent = 'info@educatione.nl';
     emailParagraph.append(emailText, emailLink);
     footerContact.appendChild(emailParagraph);
 
@@ -182,5 +187,9 @@ function footer() {
 }
 
 header();
+//homepage();
 aboutPage();
+//contactPage();
+//loginPage();
+// router();
 footer();
